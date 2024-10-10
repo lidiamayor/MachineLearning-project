@@ -52,16 +52,11 @@ def main():
     })
     # Button to predict
     if st.button("Predict Stroke Probability"):
-
-        # Create the input array with the values entered by the user
-        #input_data = np.array([[age, hypertension_val, heart_disease_val, job_type_val, glucose_level, bmi]])
-
         # Perform prediction
-        #stroke_probability = model.predict_proba(input_data)[0][1]  # Probability of class '1' (stroke)
-        stroke_probability = model.predict(input_data)[0]
+        stroke_probability = model.predict_proba(input_data)[0][1]  # Probability of class '1' (stroke)
+
         # Show the result
-        #st.subheader(f"The probability of having a stroke is: {stroke_probability * 100}%")
-        st.subheader(f"The probability of having a stroke is: {stroke_probability}")
+        st.subheader(f"The probability of having a stroke is: {stroke_probability * 100}%")
 
 
 if __name__ == '__main__':
