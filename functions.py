@@ -5,7 +5,8 @@ import seaborn as sns
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix , accuracy_score, precision_score, recall_score, f1_score
-
+from imblearn.over_sampling import SMOTE
+from imblearn.combine import SMOTEENN
 
 
 def cleaning_data(df):
@@ -111,7 +112,7 @@ def remove_outliers(df):
     return df
 
 
-def testing_models(X, y, models):
+def testing_models(X, y, models, balance):
     """
     Trains and evaluates a list of classification models under different data preprocessing scenarios.
 
@@ -165,6 +166,14 @@ def testing_models(X, y, models):
                 X_train_scaled = X_train
                 X_test_scaled = X_test
 
+            if balance == 1:
+                sm=SMOTE(random_state=42)
+                X_train_scaled,y_train=sm.fit_resample(X_train_scaled,y_train)
+
+            elif balance == 2:
+                smote_enn = SMOTEENN(random_state=42, sampling_strategy=0.9)
+                X_train_scaled, y_train = smote_enn.fit_resample(X_train_scaled, y_train)
+
             # Train and evaluate models
             for model_name, model in models.items():
                 model.fit(X_train_scaled, y_train)
@@ -200,7 +209,7 @@ def compare_confusion_matrix(results, conf):
     - Adds a title to each plot indicating the model and its configuration (outliers and scaling).
     - Adjusts the figure size to display the three plots clearly.
     """
-    idxs = results.sort_values(by='F1score' , ascending=False).head(3).index
+    idxs = results.sort_values(by='Precision' , ascending=False).head(3).index
     plt.figure(figsize=(16, 17))
     for i, id in enumerate(idxs):
         plt.subplot(5, 3, i+1)
