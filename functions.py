@@ -2,10 +2,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix , accuracy_score, precision_score, recall_score, f1_score
 
 
@@ -42,7 +40,7 @@ def correlation_matrix(df, size):
     """
     plt.figure(figsize=size)
     corr_matrix = df.corr()
-    sns.heatmap(corr_matrix, annot=True, cmap="coolwarm")
+    sns.heatmap(corr_matrix, annot=True, cmap="BuPu")
     plt.title("Correlation Matrix")
     plt.show()
 
@@ -149,8 +147,6 @@ def testing_models(X, y, models):
 
             if outliers == 'Without Outliers':
                 X_subset = remove_outliers(X_subset)   
-                #scaler = RobustScaler()
-                #X_subset = scaler.fit_transform(X)
                 y_subset = y[X_subset.index]
             else:
                 y_subset = y
