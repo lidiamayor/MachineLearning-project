@@ -1,6 +1,6 @@
-# 🧠 Machine Learning Project: Stroke Prediction
+# Machine Learning Project: 🧠 Stroke Prediction
 
-## 🖊️ Authors
+**Authors**
 
 [Lidia Mayor](https://www.linkedin.com/in/lidia-mayor-sanjuan-3b350930b/) & [Adrián Lardiés](https://www.linkedin.com/in/adrianlardies/)
 
@@ -74,9 +74,6 @@ pip install -r requirements.txt
 - Identify outliers in key columns like BMI and glucose levels.
 
 ![Outliers](./images/outliers.png)
-
-
-### 2. Data Visualization
 
 ### 2. Data Visualization
 
