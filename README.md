@@ -1,11 +1,11 @@
-# Machine Learning Project: Stroke Prediction
+# 🧠 Machine Learning Project: Stroke Prediction
 
-## Authors
+## 🖊️ Authors
 
 [Lidia Mayor](https://www.linkedin.com/in/lidia-mayor-sanjuan-3b350930b/) & [Adrián Lardiés](https://www.linkedin.com/in/adrianlardies/)
 
 
-## Project Description
+## 📝 Project Description
 
 The goal of this project is to demonstrate a complete data prediction process using Machine Learning algorithms, from data exploration and cleaning to visualization, model training, and evaluation. Class balancing techniques, such as SMOTE and SMOTEENN, are applied in an attempt to improve the performance of the models in imbalanced datasets.
 
@@ -16,7 +16,7 @@ The project is divided into two main parts:
 1. **Analysis without class balancing:** Initially, models are trained using the original dataset, which has a significant class imbalance.
 2. **Analysis using SMOTE and SMOTEENN:** We then apply the SMOTE and SMOTEENN oversampling techniques to balance the classes and retrain the models, comparing the results.
 
-## Dataset
+## 📊 Dataset
 
 The dataset used for this project is publicly available on Kaggle. You can access it [here](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset/data).
 
@@ -29,7 +29,7 @@ The dataset is located in the `healthcare-dataset-stroke-data.csv` file inside t
 - `bmi`: Body Mass Index.
 - `stroke`: Target variable indicating whether the patient has had a stroke (1) or not (0).
 
-## Project Structure
+## 📂 Project Structure
 
 The project is organized as follows:
 
@@ -44,7 +44,7 @@ The project is organized as follows:
 - **README.md**: File containing the project description and instructions on how to run it.
 
 
-## Requirements
+## ⚙️Requirements
 
 To run this project, make sure you have the following dependencies installed:
 
@@ -64,7 +64,7 @@ You can install all the dependencies by running the following command in your te
 pip install -r requirements.txt
 ```
 
-## Project Contents
+## 📑 Project Contents
 
 ### 1. Data Exploration
 
@@ -122,7 +122,7 @@ The metrics used to evaluate the models were:
 
 Comparisons between results with and without applying SMOTE and SMOTEENN show how class balancing techniques attempt to improve performance, particularly in predicting the minority class (stroke = 1). However, the best performance was achieved without balancing the classes.
 
-## Conclusions
+## 🏁 Conclusions
 
 - **Without Class Balancing:** Models trained on the imbalanced dataset, especially Random Forest and Bagging, provided the best results in terms of precision, which was crucial for minimizing false negatives. Techniques like SMOTE and SMOTEENN, while improving recall, led to an increase in false positives.
 
@@ -133,11 +133,11 @@ Comparisons between results with and without applying SMOTE and SMOTEENN show ho
 This project highlights the importance of selecting the appropriate metrics based on the problem's goals. In critical cases like stroke prediction, precision is key to minimizing false negatives, and class balancing techniques did not offer the best results for this objective.
 
 
-## Streamlit App
+## 🌐 Streamlit App
 
 You can interact with the Stroke Prediction App using the following [Streamlit link](https://machinelearning-project-stroke.streamlit.app/).
 
 
-## Presentation
+## 🖥️ Presentation
 
 You can view the presentation that summarizes the project, its findings, and key takeaways at the following [link to the presentation](https://www.canva.com/design/DAGTLZEvpiM/2ELp9jOYxkgX2DVXtMmRyQ/view?utm_content=DAGTLZEvpiM&utm_campaign=designshare&utm_medium=link&utm_source=editor).
