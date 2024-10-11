@@ -66,7 +66,7 @@ pip install -r requirements.txt
 
 ## 📑 Project Contents
 
-### 1. Data Exploration
+### 1. Data Exploration 🔍
 
 - Inspect the dataset for missing values and duplicates.
 - Handle missing values (imputation for Body Mass Index - BMI) and remove duplicates.
@@ -75,7 +75,7 @@ pip install -r requirements.txt
 
 ![Outliers](./images/outliers.png)
 
-### 2. Data Visualization
+### 2. Data Visualization 📈
 
 - Create histograms and boxplots to analyze data distribution and detect outliers.
 
@@ -89,7 +89,7 @@ pip install -r requirements.txt
 
 <img src="./images/imbalance.png" alt="Imbalance" width="500"/>
 
-### 3. Machine Learning Models
+### 3. Machine Learning Models 🤖
 
 The following classification algorithms were tested:
 
@@ -108,7 +108,7 @@ The models were evaluated in multiple configurations:
 - Different scaling techniques: No scaling, standardization, and normalization.
 - With and without class balancing (using SMOTE and SMOTEENN techniques).
 
-### 4. Model Evaluation
+### 4. Model Evaluation 📊
 
 The metrics used to evaluate the models were:
 
