@@ -27,6 +27,7 @@ The dataset is located in the `healthcare-dataset-stroke-data.csv` file inside t
 The project is organized as follows:
 
 - **data/**: Contains the original dataset.
+- **images/**: Folder containing images used in the README for data visualization and model results.
 - **functions.py**: File with custom functions for data cleaning, visualization, and model evaluation.
 - **notebook.ipynb**: Jupyter notebook showcasing the entire workflow, from data exploration to model analysis, class balancing, and final model evaluation.
 - **app.py**: Streamlit application that allows users to input data and receive stroke predictions based on the trained model.
