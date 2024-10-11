@@ -19,9 +19,7 @@ df = df.drop(columns = ['gender', 'Residence_type', 'smoking_status', 'ever_marr
 X = df.drop('stroke', axis=1) 
 y = df['stroke']
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-X_train = remove_outliers(X_train)  
+X_train = remove_outliers(X)  
 y_train = y[X_train.index]
 
 model = BaggingClassifier(DecisionTreeClassifier(),n_estimators=100)
