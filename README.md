@@ -64,6 +64,9 @@ pip install -r requirements.txt
 - Transform categorical variables into numerical values (gender, work type, etc.).
 - Identify outliers in key columns like BMI and glucose levels.
 
+![Outliers](./images/outliers.png)
+
+
 ### 2. Data Visualization
 
 - Create histograms and boxplots to analyze data distribution and detect outliers.
