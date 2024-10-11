@@ -8,7 +8,7 @@ import pickle
 def main():
     # Load the trained model (make sure to save the model previously as a .pkl file)
     # For example, if your model is called "stroke_model.pkl"
-    with open("stroke_model.pkl", "rb") as file:
+    with open("model/stroke_model.pkl", "rb") as file:
         model = pickle.load(file)
 
     st.title('Stroke Predictor')
