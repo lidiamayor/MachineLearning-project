@@ -1,5 +1,10 @@
 # Machine Learning Project: Stroke Prediction
 
+## Authors
+
+[Lidia Mayor](https://www.linkedin.com/in/lidia-mayor-sanjuan-3b350930b/) & [Adrián Lardiés](https://www.linkedin.com/in/adrianlardies/)
+
+
 ## Project Description
 
 The goal of this project is to demonstrate a complete data prediction process using Machine Learning algorithms, from data exploration and cleaning to visualization, model training, and evaluation. Class balancing techniques, such as SMOTE and SMOTEENN, are applied in an attempt to improve the performance of the models in imbalanced datasets.
@@ -12,6 +17,8 @@ The project is divided into two main parts:
 2. **Analysis using SMOTE and SMOTEENN:** We then apply the SMOTE and SMOTEENN oversampling techniques to balance the classes and retrain the models, comparing the results.
 
 ## Dataset
+
+The dataset used for this project is publicly available on Kaggle. You can access it [here](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset/data).
 
 The dataset is located in the `healthcare-dataset-stroke-data.csv` file inside the `data/` folder. It contains 12 columns and 5110 rows. The key variables are:
 
@@ -28,10 +35,10 @@ The project is organized as follows:
 
 - **data/**: Contains the original dataset.
 - **images/**: Folder containing images used in the README for data visualization and model results.
-- **functions.py**: File with custom functions for data cleaning, visualization, and model evaluation.
-- **notebook.ipynb**: Jupyter notebook showcasing the entire workflow, from data exploration to model analysis, class balancing, and final model evaluation.
+- **lib/functions.py**: File with custom functions for data cleaning, visualization, and model evaluation.
+- **notebook/machinelearning.ipynb**: Jupyter notebook showcasing the entire workflow, from data exploration to model analysis, class balancing, and final model evaluation.
+- **model/stroke_model.pkl**: Serialized trained model used by the Streamlit app for making predictions.
 - **app.py**: Streamlit application that allows users to input data and receive stroke predictions based on the trained model.
-- **stroke_model.pkl**: Serialized trained model used by the Streamlit app for making predictions.
 - **requirements.txt**: File containing the necessary dependencies to run the Streamlit app and the project.
 - **README.md**: File containing the project description and instructions on how to run it.
 
@@ -123,3 +130,13 @@ Comparisons between results with and without applying SMOTE and SMOTEENN show ho
 - **With Class Balancing (SMOTE, SMOTEENN):** Although recall improved, these techniques led to a drop in precision, increasing false positives. As a result, the models without class balancing performed better in terms of precision and overall F1-score.
 
 This project highlights the importance of selecting the appropriate metrics based on the problem's goals. In critical cases like stroke prediction, precision is key to minimizing false negatives, and class balancing techniques did not offer the best results for this objective.
+
+
+## Streamlit App
+
+You can interact with the Stroke Prediction App using the following [Streamlit link](https://machinelearning-project-stroke.streamlit.app/).
+
+
+## Presentation
+
+You can view the presentation that summarizes the project, its findings, and key takeaways at the following [link to the presentation](https://www.canva.com/design/DAGTLZEvpiM/2ELp9jOYxkgX2DVXtMmRyQ/view?utm_content=DAGTLZEvpiM&utm_campaign=designshare&utm_medium=link&utm_source=editor).
