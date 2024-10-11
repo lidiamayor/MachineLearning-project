@@ -35,11 +35,12 @@ The project is organized as follows:
 
 - **data/**: Contains the original dataset.
 - **images/**: Folder containing images used in the README for data visualization and model results.
-- **lib/functions.py**: File with custom functions for data cleaning, visualization, and model evaluation.
-- **notebook/machinelearning.ipynb**: Jupyter notebook showcasing the entire workflow, from data exploration to model analysis, class balancing, and final model evaluation.
-- **model/stroke_model.pkl**: Serialized trained model used by the Streamlit app for making predictions.
-- **app.py**: Streamlit application that allows users to input data and receive stroke predictions based on the trained model.
-- **requirements.txt**: File containing the necessary dependencies to run the Streamlit app and the project.
+- **[lib/functions.py](https://github.com/lidiamayor/MachineLearning-project/tree/main/lib)**: File with custom functions for data cleaning, visualization, and model evaluation.
+- **[notebook/machinelearning.ipynb](https://github.com/lidiamayor/MachineLearning-project/blob/main/notebook/machinelearning.ipynb)**: Jupyter notebook showcasing the entire workflow, from data exploration to model analysis, class balancing, and final model evaluation.
+- **[src/main.py](https://github.com/lidiamayor/MachineLearning-project/blob/main/src/main.py)**: Script that cleans the data and trains and save the final model.
+- **[model/stroke_model.pkl](https://github.com/lidiamayor/MachineLearning-project/tree/main/model)**: Serialized trained model used by the Streamlit app for making predictions.
+- **[app.py](https://github.com/lidiamayor/MachineLearning-project/blob/main/app.py)**: Streamlit application that allows users to input data and receive stroke predictions based on the trained model.
+- **[requirements.txt](https://github.com/lidiamayor/MachineLearning-project/blob/main/requirements.txt)**: File containing the necessary dependencies to run the Streamlit app and the project.
 - **README.md**: File containing the project description and instructions on how to run it.
 
 
