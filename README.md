@@ -70,8 +70,16 @@ pip install -r requirements.txt
 ### 2. Data Visualization
 
 - Create histograms and boxplots to analyze data distribution and detect outliers.
+
+![Variable Distribution](./images/variable_distribution.png)
+
 - Generate a correlation matrix to identify relationships between variables.
+
+![Correlation Matrix](./images/correlation_matrix.png)
+
 - Analyze class distribution, highlighting the significant imbalance between patients who had a stroke and those who did not.
+
+![Imbalance](./images/variable_imbalance.png)
 
 ### 3. Machine Learning Models
 
