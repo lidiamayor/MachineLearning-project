@@ -14,7 +14,7 @@ def main():
     st.title('Stroke Predictor')
 
     # User input for data
-    age = st.slider("Age", 1, 100, 30)
+    age = st.slider("Age", 1, 100, 50)
     glucose_level = st.slider("Glucose Level", 50.0, 300.0, 100.0)
     bmi = st.slider("BMI (Body Mass Index)", 10.0, 60.0, 25.0)
 
