@@ -73,7 +73,7 @@ pip install -r requirements.txt
 
 - Create histograms and boxplots to analyze data distribution and detect outliers.
 
-<img src="./images/variable_distribution.png" alt="Variable Distribution" width="600"/>
+<img src="./images/variable_distribution.png" alt="Variable Distribution" width="700"/>
 
 - Generate a correlation matrix to identify relationships between variables.
 
