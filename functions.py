@@ -119,19 +119,21 @@ def testing_models(X, y, models, balance):
     The process includes:
     - Evaluating the models with two configurations: with and without outliers.
     - Testing three types of scaling: no scaling, standardization, and normalization.
+    - Applying two class balancing techniques: SMOTE and SMOTEENN, or no balancing.
     - Splitting the data into training and test sets for each configuration.
     - Preprocessing the data for each scenario, removing outliers if applicable, and applying the chosen scaling method.
+    - Applying class balancing techniques (SMOTE or SMOTEENN) only on the training set when specified.
     - Training each model on the preprocessed data.
     - Evaluating the performance of the models on the test set using the following metrics:
       - Accuracy
-      - Precision
+      - Precision (focus on minimizing false negatives)
       - Recall
       - F1-score
-    - Storing the results of each model along with the outlier and scaling configuration used.
+    - Storing the results of each model along with the outlier, scaling, and balancing configuration used.
     - Storing the confusion matrices for each model and scenario.
 
     Returns:
-    - A DataFrame containing the performance metrics of each model under each scenario (outliers and scaling).
+    - A DataFrame containing the performance metrics of each model under each scenario (outliers, scaling, and balancing).
     - A dictionary storing the confusion matrices generated for each model and configuration.
     """
 
@@ -202,12 +204,13 @@ def testing_models(X, y, models, balance):
 
 def compare_confusion_matrix(results, conf):
     """
-    Displays the confusion matrices of the top three models based on their F1-score.
+    Displays the confusion matrices of the top three models based on their Precision.
 
-    - Sorts the models by F1-score in descending order and selects the top three.
+    - Sorts the models by Precision in descending order and selects the top three.
     - Generates a heatmap for the confusion matrix of each of the top three models.
-    - Adds a title to each plot indicating the model and its configuration (outliers and scaling).
+    - Adds a title to each plot indicating the model and its configuration (outliers, scaling, and class balancing).
     - Adjusts the figure size to display the three plots clearly.
+    - Visualizes how well the models performed in minimizing false negatives, a key focus of the analysis.
     """
     idxs = results.sort_values(by='Precision' , ascending=False).head(3).index
     plt.figure(figsize=(16, 17))
