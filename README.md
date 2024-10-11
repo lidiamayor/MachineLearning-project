@@ -73,11 +73,11 @@ pip install -r requirements.txt
 
 - Create histograms and boxplots to analyze data distribution and detect outliers.
 
-<img src="./images/variable_distribution.png" alt="Variable Distribution" width="500"/>
+<img src="./images/variable_distribution.png" alt="Variable Distribution" width="600"/>
 
 - Generate a correlation matrix to identify relationships between variables.
 
-<img src="./images/correlation_matrix.png" alt="Correlation Matrix" width="500"/>
+<img src="./images/correlation_matrix.png" alt="Correlation Matrix" width="600"/>
 
 - Analyze class distribution, highlighting the significant imbalance between patients who had a stroke and those who did not.
 
