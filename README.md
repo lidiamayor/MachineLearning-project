@@ -2,14 +2,14 @@
 
 ## Project Description
 
-The goal of this project is to demonstrate a complete data prediction process using Machine Learning algorithms, from data exploration and cleaning to visualization, model training, and evaluation. Class balancing techniques, such as SMOTE, are applied to improve the performance of the models in imbalanced datasets.
+The goal of this project is to demonstrate a complete data prediction process using Machine Learning algorithms, from data exploration and cleaning to visualization, model training, and evaluation. Class balancing techniques, such as SMOTE and SMOTEENN, are applied in an attempt to improve the performance of the models in imbalanced datasets.
 
 The dataset used contains medical and demographic information of patients, with features such as age, glucose level, hypertension, among others, and the main goal is to predict whether a patient will have a stroke based on these characteristics.
 
 The project is divided into two main parts:
 
 1. **Analysis without class balancing:** Initially, models are trained using the original dataset, which has a significant class imbalance.
-2. **Analysis using SMOTE:** We then apply the SMOTE oversampling technique to balance the classes and retrain the models, comparing the results.
+2. **Analysis using SMOTE and SMOTEENN:** We then apply the SMOTE and SMOTEENN oversampling techniques to balance the classes and retrain the models, comparing the results.
 
 ## Dataset
 
@@ -28,20 +28,26 @@ The project is organized as follows:
 
 - **data/**: Contains the original dataset.
 - **functions.py**: File with custom functions for data cleaning, visualization, and model evaluation.
-- **notebook.ipynb**: Jupyter notebook showcasing the entire workflow from data exploration to model analysis and class balancing.
+- **notebook.ipynb**: Jupyter notebook showcasing the entire workflow, from data exploration to model analysis, class balancing, and final model evaluation.
+- **app.py**: Streamlit application that allows users to input data and receive stroke predictions based on the trained model.
+- **stroke_model.pkl**: Serialized trained model used by the Streamlit app for making predictions.
+- **requirements.txt**: File containing the necessary dependencies to run the Streamlit app and the project.
 - **README.md**: File containing the project description and instructions on how to run it.
+
 
 ## Requirements
 
 To run this project, make sure you have the following dependencies installed:
 
 - pandas
-- numpy
 - matplotlib
 - seaborn
 - scikit-learn
-- imblearn
+- imbalanced-learn
 - tensorflow
+- jinja2
+- streamlit
+- ipykernel
 
 You can install all the dependencies by running the following command in your terminal:
 
@@ -74,24 +80,30 @@ The following classification algorithms were tested:
 - SVM
 - KNN
 - Naive Bayes
+- Bagging
+- AdaBoost
 
-The models were evaluated both with the imbalanced dataset and after applying the SMOTE technique.
+The models were evaluated in multiple configurations:
+
+- With and without outliers.
+- Different scaling techniques: No scaling, standardization, and normalization.
+- With and without class balancing (using SMOTE and SMOTEENN techniques).
 
 ### 4. Model Evaluation
 
 The metrics used to evaluate the models were:
 
 - **Accuracy**
-- **Precision**
+- **Precision** (most important for minimizing false negatives)
 - **Recall**
 - **F1-score**
 
-Comparisons between results before and after applying SMOTE show how class balancing improves performance, particularly in predicting the minority class (stroke = 1).
+Comparisons between results with and without applying SMOTE and SMOTEENN show how class balancing techniques attempt to improve performance, particularly in predicting the minority class (stroke = 1). However, the best performance was achieved without balancing the classes.
 
 ## Conclusions
 
-- **Pre-SMOTE Analysis:** Models trained with the imbalanced dataset showed poor performance in predicting the minority class (stroke). Precision and Recall metrics for this class were low due to the high number of false negatives.
+- **Without Class Balancing:** Models trained on the imbalanced dataset, especially Random Forest and Bagging, provided the best results in terms of precision, which was crucial for minimizing false negatives. Techniques like SMOTE and SMOTEENN, while improving recall, led to an increase in false positives.
   
-- **Post-SMOTE Analysis:** After applying SMOTE, the models significantly improved their ability to predict stroke cases. Models like Random Forest and KNN showed a substantial increase in F1-Score, indicating a better balance between Precision and Recall.
+- **With Class Balancing (SMOTE, SMOTEENN):** Although recall improved, these techniques led to a drop in precision, increasing false positives. As a result, the models without class balancing performed better in terms of precision and overall F1-score.
 
-This project demonstrates the importance of addressing class imbalance in prediction problems. Applying balancing techniques, such as SMOTE, significantly improves the performance of models, especially in critical problems where false negatives can have severe consequences, like stroke prediction.
+This project highlights the importance of selecting the appropriate metrics based on the problem's goals. In critical cases like stroke prediction, precision is key to minimizing false negatives, and class balancing techniques did not offer the best results for this objective.
