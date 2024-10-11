@@ -116,6 +116,8 @@ Comparisons between results with and without applying SMOTE and SMOTEENN show ho
 ## Conclusions
 
 - **Without Class Balancing:** Models trained on the imbalanced dataset, especially Random Forest and Bagging, provided the best results in terms of precision, which was crucial for minimizing false negatives. Techniques like SMOTE and SMOTEENN, while improving recall, led to an increase in false positives.
+
+![Confusion Matrix](./images/confusion_matrix.png)
   
 - **With Class Balancing (SMOTE, SMOTEENN):** Although recall improved, these techniques led to a drop in precision, increasing false positives. As a result, the models without class balancing performed better in terms of precision and overall F1-score.
 
